@@ -5,4 +5,5 @@ steps:
     args: ["push", "gcr.io/$PROJECT_ID/gdg-app"]
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: "gcloud"
-    args: ["run", "deploy", "gdg-app", "--image", "gcr.io/$PROJECT_ID/gdg-app", "--region", "us-central1", "--allow-unauthenticated"]
+    args: ["run", "deploy", "gdg-app", "--image", "gcr.io/$PROJECT_ID/gdg-app", "--region", "us-central1",
+           "--allow-unauthenticated", "--set-env-vars=GOOGLE_CLOUD_PROJECT=$PROJECT_ID,PROJECT_ID=$PROJECT_ID"]
